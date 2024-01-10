@@ -6,11 +6,25 @@
       <title>Document</title>
 
       <link rel="stylesheet" href="css/style.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
-      <h1 id="messaggio"></h1>
-
-      <img data-immagine-src="img/prato-nuvole.jpg" alt="immagine">
+      <div id="app">
+            <h1 class="main-title">{{ pageTitle }}</h1>
+    
+            <div class="post" v-for="post in posts" :key="post.id">
+                <div class="post__header">
+                    
+                </div>
+                <div class="post__text">{{ post.content }}</div>
+                <div class="post__image">
+                    <img :src="post.media" alt="Post Image">
+                </div>
+                <div class="post__footer">
+                    
+                </div>
+            </div>
+      </div>
 
       <script src="js/scripts.js" type="text/javascript"></script>
 </body>
